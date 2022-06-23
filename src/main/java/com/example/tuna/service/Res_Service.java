@@ -16,4 +16,6 @@ public interface Res_Service {
     Optional<Restaurant> getResId(Long id);
     Optional<Restaurant> getResName(String name);
     Page<resDto> getAll(Pageable pageable);
+
+    void deleteRes(Long id);
 }

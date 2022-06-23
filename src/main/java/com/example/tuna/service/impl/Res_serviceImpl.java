@@ -71,4 +71,9 @@ public class Res_serviceImpl implements Res_Service {
     public Page<resDto> getAll(Pageable pageable) {
         return null;
     }
+
+    @Override
+    public void deleteRes(Long id) {
+        resRepo.deleteById(id);
+    }
 }

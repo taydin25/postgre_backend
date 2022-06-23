@@ -63,6 +63,6 @@ public class Category_ServiceImpl implements Category_Service {
 
     @Override
     public void deleteCategory(Long id) {
-
+        cRepo.deleteById(id);
     }
 }

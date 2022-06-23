@@ -11,4 +11,5 @@ public interface Menu_Service {
     List<MenuDto> getAll();
     Optional<Menu> getMenuId(Long id);
     Page<MenuDto> getAll(Pageable pageable);
+    void deleteMenu(Long id);
 }

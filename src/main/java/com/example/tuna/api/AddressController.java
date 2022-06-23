@@ -1,11 +1,13 @@
 package com.example.tuna.api;
 import com.example.tuna.dto.AddressDto;
 import com.example.tuna.entity.Address;
+import com.example.tuna.entity.Category;
 import com.example.tuna.entity.Menu;
 import com.example.tuna.service.Address_Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +29,11 @@ public class AddressController {
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Address>> getAddById(@PathVariable("id") Long id){
 
+        return  ResponseEntity.ok(address_service.getAddId(id));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Optional<Address>> delAddressById(@PathVariable("id") Long id){
+        address_service.deleteAddress(id);
         return  ResponseEntity.ok(address_service.getAddId(id));
     }
 

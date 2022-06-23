@@ -59,7 +59,9 @@ public class Address_ServiceImpl implements Address_Service {
         Optional<Address> address = aRepo.findById(id);
         return address;
     }
-
+    public void deleteAddress(Long id) {
+        aRepo.deleteById(id);
+    }
     @Override
     public Page<AddressDto> getAll(Pageable pageable) {
         return null;

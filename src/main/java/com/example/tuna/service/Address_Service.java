@@ -15,4 +15,7 @@ public interface Address_Service {
     List<AddressDto> getAll();
     Optional<Address> getAddId(Long id);
     Page<AddressDto> getAll(Pageable pageable);
+
+    void deleteAddress(Long id);
+
 }

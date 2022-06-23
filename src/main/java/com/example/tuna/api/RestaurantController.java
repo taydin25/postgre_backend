@@ -33,10 +33,10 @@ public class RestaurantController {
 
         return  ResponseEntity.ok( res_service.getResId(id));
     }
-    /*@GetMapping("/{name}")
-    public ResponseEntity<Optional<Restaurant>> getResByName(@PathVariable("name") String name){
-
-        return  ResponseEntity.ok( res_service.getResName(name));
-    }*/
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Optional<Restaurant>> delRestaurantById(@PathVariable("id") Long id){
+        res_service.deleteRes(id);
+        return  ResponseEntity.ok(res_service.getResId(id));
+    }
 
 }

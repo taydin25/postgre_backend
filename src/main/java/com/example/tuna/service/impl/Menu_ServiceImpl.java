@@ -66,4 +66,9 @@ public class Menu_ServiceImpl implements Menu_Service {
     public Page<MenuDto> getAll(Pageable pageable) {
         return null;
     }
+
+    @Override
+    public void deleteMenu(Long id) {
+        mRepo.deleteById(id);
+    }
 }

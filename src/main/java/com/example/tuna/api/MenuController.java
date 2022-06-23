@@ -1,5 +1,6 @@
 package com.example.tuna.api;
 import com.example.tuna.dto.MenuDto;
+import com.example.tuna.entity.Category;
 import com.example.tuna.entity.Menu;
 import com.example.tuna.service.Menu_Service;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,11 @@ public class MenuController {
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Menu>> getMenuById(@PathVariable("id") Long id){
 
+        return  ResponseEntity.ok(menu_service.getMenuId(id));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Optional<Menu>> delCategoryById(@PathVariable("id") Long id){
+        menu_service.deleteMenu(id);
         return  ResponseEntity.ok(menu_service.getMenuId(id));
     }
 }
